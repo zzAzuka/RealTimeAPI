@@ -1,11 +1,24 @@
 package com.zenloww;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 import java.util.Objects;
 
+@Entity
 public class SoftwareEngineer {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String techStack;
+
+    public SoftwareEngineer() {
+
+    }
 
     SoftwareEngineer(int id, String name, String techStack){
         this.id = id;
@@ -29,12 +42,12 @@ public class SoftwareEngineer {
         this.name = name;
     }
 
-    public String getTecStack() {
+    public String getTechStack() {
         return techStack;
     }
 
-    public void setTecStack(String tecStack) {
-        this.techStack = tecStack;
+    public void setTechStack(String techStack) {
+        this.techStack = techStack;
     }
 
     @Override
