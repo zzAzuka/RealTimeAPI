@@ -33,5 +33,10 @@ public class SoftwareEngineerController {
     public void deleteEngineers(@PathVariable Integer id){
         softwareEngineerService.deleteSoftwareEngineer(id);
     }
+
+    @PutMapping("{id}")
+    public void updateEngineer(@PathVariable Integer id, @RequestBody SoftwareEngineer softwareEngineer){
+        softwareEngineerService.updateSoftwareEngineer(id, softwareEngineer);
+    }
 }
 
